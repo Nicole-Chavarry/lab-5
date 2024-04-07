@@ -13,7 +13,6 @@ int countWordOccurrencesInFile(const std::string& filename, const std::string& t
     std::string word;
     int count = 0;
     while (file >> word) {
-        // Приводим слово к нижнему регистру для учета регистра
         std::transform(word.begin(), word.end(), word.begin(), ::tolower);
 
         if (word == targetWord) {
@@ -26,10 +25,10 @@ int countWordOccurrencesInFile(const std::string& filename, const std::string& t
 }
 
 int main() {
-    std::string filename = "texto.txt";// Путь к файлу с текстом
+    std::string filename = "texto.txt";
     std::string targetWord;
     std::cout << "Enter the word to search for: ";
-    std::cin >> targetWord;// Заданное слово для подсчета
+    std::cin >> targetWord;
 
     int occurrences = countWordOccurrencesInFile(filename, targetWord);
     if (occurrences >= 0) {
